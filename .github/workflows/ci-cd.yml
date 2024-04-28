@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.7'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -42,6 +42,6 @@ jobs:
           EB_APP_NAME: 'flask-app'
           EB_ENV_NAME: 'flask-app-env'
         run: |
-          eb init -p python-3.7 $EB_APP_NAME --region $AWS_REGION
-          eb create $EB_ENV_NAME --single
+          eb init -p python-3.11 $EB_APP_NAME --region $AWS_REGION
+          ##eb create $EB_ENV_NAME --single
           eb deploy --staged
